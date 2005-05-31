@@ -6,6 +6,7 @@ Epoch:		0
 License:	GPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/advancemame/%{name}-%{version}.tar.gz
+# Source0-md5:	8ae9144e2bec8b8498361a25fdf76741
 URL:		-
 BuildRequires:	autoconf
 BuildRequires:	automake
