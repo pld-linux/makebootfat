@@ -2,7 +2,7 @@ Summary:	The bootable USB disk generator
 Summary(pl):	Generator bootowalnych dysków USB
 Name:		makebootfat
 Version:	1.4
-Release:	0.1
+Release:	0.2
 Epoch:		0
 License:	GPL v2
 Group:		Applications
@@ -35,14 +35,19 @@ Generator bootowalnych dysków USB.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT/%{_datadir}/%{name}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install mbrfat.bin $RPM_BUILD_ROOT/%{_datadir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/*[!1] test
+%doc doc/*[!1] test AUTHORS README HISTORY mbrfat.asm
 %attr(755,root,root) %{_bindir}/*
+%{_datadir}/%{name}
 %{_mandir}/man1/*
