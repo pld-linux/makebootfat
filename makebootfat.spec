@@ -34,13 +34,12 @@ Generator bootowalnych dysków USB.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT/%{_datadir}/%{name}
+install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install mbrfat.bin $RPM_BUILD_ROOT/%{_datadir}/%{name}
+install mbrfat.bin $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
