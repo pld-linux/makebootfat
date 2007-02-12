@@ -1,5 +1,5 @@
 Summary:	The bootable USB disk generator
-Summary(pl):	Generator bootowalnych dysków USB
+Summary(pl.UTF-8):   Generator bootowalnych dyskÃ³w USB
 Name:		makebootfat
 Version:	1.4
 Release:	0.2
@@ -17,8 +17,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 The bootable USB disk generator.
 
-%description -l pl
-Generator bootowalnych dysków USB.
+%description -l pl.UTF-8
+Generator bootowalnych dyskÃ³w USB.
 
 %prep
 %setup -q
