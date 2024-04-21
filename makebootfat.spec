@@ -2,16 +2,14 @@ Summary:	The bootable USB disk generator
 Summary(pl.UTF-8):	Generator bootowalnych dysków USB
 Name:		makebootfat
 Version:	1.4
-Release:	0.2
-Epoch:		0
+Release:	1
 License:	GPL v2
-Group:		Applications
-Source0:	http://dl.sourceforge.net/advancemame/%{name}-%{version}.tar.gz
+Group:		Applications/System
+Source0:	https://downloads.sourceforge.net/advancemame/%{name}-%{version}.tar.gz
 # Source0-md5:	8ae9144e2bec8b8498361a25fdf76741
-URL:		http://advancemame.sourceforge.net/boot-readme.html
-BuildRequires:	autoconf
+URL:		http://www.advancemame.it/boot-readme.html
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,7 +22,6 @@ Generator bootowalnych dysków USB.
 %setup -q
 
 %build
-%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -46,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/*[!1] test AUTHORS README HISTORY mbrfat.asm
-%attr(755,root,root) %{_bindir}/*
+%doc doc/{authors,history,readme}.html AUTHORS README HISTORY
+%attr(755,root,root) %{_bindir}/makebootfat
 %{_datadir}/%{name}
-%{_mandir}/man1/*
+%{_mandir}/man1/makebootfat.1*
